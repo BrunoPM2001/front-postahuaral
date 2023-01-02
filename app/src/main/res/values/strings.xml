@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <!--    Primera pantalla    -->
+    <string name="p1_titulo">TU POSTA</string>
+    <string name="p1_placeh_correo">CORREO</string>
+    <string name="p1_placeh_contraseña">CONTRASEÑA</string>
+    <string name="p1_btn_inicio_sesion">INICIAR SESIÓN</string>
+    <string name="p1_btn_registrarse">REGISTRARSE</string>
+    <!--    Segunda pantalla    -->
+    <string name="p2_btn_programar_cita">Programar Cita</string>
+    <string name="p2_btn_visualizar_citas">Visualizar Citas</string>
+    <!--    Tercera pantalla    -->
+    <string name="p3_titulo">PROGRAMAR\nCITA</string>
+    <string name="p3_btn_especialidad">Especialidad</string>
+    <string name="p3_btn_medico">Médico</string>
+    <string name="p3_btn_horario">Horario</string>
+    <string name="p3_btn_reservar">RESERVAR CITA</string>
+    <!--    Cuarta pantalla    -->
+    <string name="p4_titulo">CONFIRMACIÓN DE\nREGISTRO DE CITA</string>
+    <string name="p4_resumen_especialidad">ESPECIALIDAD:</string>
+    <string name="p4_resumen_medico">MÉDICO:</string>
+    <string name="p4_resumen_horario">HORARIO:</string>
+    <string name="p4_btn_pagar">REALIZAR PAGO</string>
+    <!--    Quinta pantalla    -->
+    <string name="p5_titulo">REGISTRO\nDE PACIENTE</string>
+    <string name="p5_datos">DATOS DEL PACIENTE</string>
+    <string name="p5_placeh_dni">DNI</string>
+    <string name="p5_placeh_nom">NOMBRE</string>
+    <string name="p5_placeh_ape">APELLIDO</string>
+    <string name="p5_placeh_email">EMAIL</string>
+    <string name="p5_placeh_tele">TELÉFONO</string>
+    <string name="p5_placeh_pass">CONTRASEÑA</string>
+    <string name="p5_btn_registrar">REGISTRAR</string>
+    <!--    Sexta pantalla    -->
+    <string name="p6_titulo">REQUIERE CREACIÓN\nDE HISTORIAL\n MÉDICO</string>
+    <string name="p6_desc">Usted no cuenta\ncon historial médico,\npara poder solicitar\nla creación de uno\ndebe realizar un abono\nde s/. 5.00</string>
+    <!--    Séptima pantalla    -->
+    <string name="p7_titulo">REGISTRO EXITOSO</string>
+    <string name="p7_desc">PACIENTE REGISTRADO</string>
+    <string name="p7_placeh_dni">DNI</string>
+    <string name="p7_placeh_nom">NOMBRE</string>
+    <string name="p7_placeh_ape">APELLIDO</string>
+    <string name="p7_placeh_email">EMAIL</string>
+    <string name="p7_placeh_tele">TELÉFONO</string>
+    <string name="p7_placeh_pass">CONTRASEÑA</string>
+    <string name="p7_end">Ir a inicio</string>
+    <!--    Octava pantalla    -->
+    <string name="p8_titulo">CITAS PROGRAMADAS</string>
+
+    <!--    Descripción de imágenes-->
+    <string name="img1">Logo de inicio</string>
+</resources>
