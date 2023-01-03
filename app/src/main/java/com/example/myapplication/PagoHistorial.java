@@ -65,6 +65,7 @@ public class PagoHistorial extends AppCompatActivity {
         medF = getIntent().getExtras().getString("medF");
         horF = getIntent().getExtras().getString("horF");
         costoT = getIntent().getExtras().getString("costo");
+        correo = getIntent().getExtras().getString("correo");
 
         pagarH = findViewById(R.id.confirmar_pago);
         backProgramarCita = findViewById(R.id.back_programar);
@@ -282,6 +283,8 @@ public class PagoHistorial extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(PagoHistorial.this);
             requestQueue.add(stringRequest);
 
+            enviarCorreo();
+
             Intent newWindow = new Intent(getApplicationContext(), MenuActivity.class);
             newWindow.putExtra("Token", token);
             Toast.makeText(this, "Pago exitoso", Toast.LENGTH_SHORT).show();
@@ -295,30 +298,26 @@ public class PagoHistorial extends AppCompatActivity {
         }
     }
 
-    /*
     private void enviarCorreo() {
         JSONObject body = new JSONObject();
         try {
             body.put("email", correo);
             body.put("esp", espF);
             body.put("medico", medF);
-            body.put("dia", horF);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT,
-                "https://apipostahuaral.azurewebsites.net/login",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                "https://nodemailer-sample.onrender.com/api/mail/sendConfirmacion",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject object = new JSONObject(response);
-                            String token = object.getString("Token");
-                            Object Usuario = object.getJSONObject("Usuario");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(PagoHistorial.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PagoHistorial.this, "No se pudo enviar el mail de confirmación.", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -341,7 +340,5 @@ public class PagoHistorial extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(PagoHistorial.this);
         requestQueue.add(stringRequest);
     }
-
-     */
 
 }

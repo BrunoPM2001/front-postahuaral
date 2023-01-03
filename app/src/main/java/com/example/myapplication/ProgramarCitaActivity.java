@@ -54,6 +54,8 @@ public class ProgramarCitaActivity extends AppCompatActivity {
     String horF;
     String costoT;
 
+    String correo;
+
     Button back;
     Button reservar;
 
@@ -63,6 +65,7 @@ public class ProgramarCitaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_programar_cita);
 
         token = getIntent().getExtras().getString("Token");
+        correo = getIntent().getExtras().getString("correo");
 
         autoCompleteTextView = findViewById(R.id.auto_complete_esp);
         autoCompleteTextView2 = findViewById(R.id.auto_complete_med);
@@ -112,6 +115,7 @@ public class ProgramarCitaActivity extends AppCompatActivity {
                 newWindow.putExtra("medF", medF);
                 newWindow.putExtra("horF", horF);
                 newWindow.putExtra("costo", costoT);
+                newWindow.putExtra("correo", correo);
                 startActivity(newWindow);
             }
         });
@@ -121,6 +125,7 @@ public class ProgramarCitaActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent newWindow = new Intent(getApplicationContext(), MenuActivity.class);
                 newWindow.putExtra("Token", token);
+                newWindow.putExtra("correo", correo);
                 startActivity(newWindow);
             }
         });

@@ -71,6 +71,7 @@ public class MenuActivity extends AppCompatActivity {
                             if (token != null ) {
                                 Intent newWindow = new Intent(getApplicationContext(), CitasActivity.class);
                                 newWindow.putExtra("Citas", object.getJSONArray("Citas").toString());
+                                newWindow.putExtra("correo", correo1);
                                 startActivity(newWindow);
                             } else {
                                 Toast.makeText(MenuActivity.this, "Credenciales incorectas", Toast.LENGTH_SHORT).show();
