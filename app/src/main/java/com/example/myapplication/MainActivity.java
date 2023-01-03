@@ -2,10 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -18,18 +20,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MainActivity extends AppCompatActivity {
 
-    /*
-    String [] items = {"Holi", "gaa"};
-
-    AutoCompleteTextView autoCompleteTextView;
-
-    ArrayAdapter<String> adapterString;
-*/
     EditText correo;
     EditText pass;
     Button iniciar_sesion;
@@ -50,9 +42,7 @@ public class MainActivity extends AppCompatActivity {
         iniciar_sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Correo: " + correo.getText().toString());
-                System.out.println("Pass: " + pass.getText().toString());
-
+                login(correo.getText().toString(), pass.getText().toString());
             }
         });
 
@@ -75,35 +65,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(String correo, String pass) {
+        JSONObject body = new JSONObject();
+
+        try {
+            body.put("correo", correo);
+            body.put("password", pass);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         StringRequest stringRequest = new StringRequest(Request.Method.PUT,
-                "http://192.168.1.6/login",
+                "https://apipostahuaral.azurewebsites.net/login",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject object = new JSONObject(response);
-                            String token = object.getString("client_secret");
+                            String token = object.getString("Token");
+                            Object Usuario = object.getJSONObject("Usuario");
+                            
+                            if (token != null ) {
+                                Intent newWindow = new Intent(getApplicationContext(), MenuActivity.class);
+                                newWindow.putExtra("Token", token);
+                                newWindow.putExtra("Correo", correo);
+                                startActivity(newWindow);
+                            } else {
+                                Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                            }
+                            
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
                         }
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                System.out.println(error);
             }
         }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> headers = new HashMap<>();
-                return headers;
+            public byte[] getBody() throws AuthFailureError {
+                return body.toString().getBytes();
             }
-
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                return params;
+            public String getBodyContentType() {
+                return "application/json";
             }
         };
 

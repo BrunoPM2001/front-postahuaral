@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Posta Huaral</string>
     <!--    Primera pantalla    -->
     <string name="p1_titulo">TU POSTA</string>
     <string name="p1_placeh_correo">CORREO</string>

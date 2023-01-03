@@ -40,111 +40,22 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="57dp"
                     android:layout_marginEnd="40dp"
+                    android:padding="15dp"
                     android:background="@color/soft"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listaCitas"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="@drawable/border_citas"
-                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content"
                         android:padding="10dp"
                         >
 
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="9 de noviembre de 2002 a las 15"
-                            android:textColor="@color/border"
-                            android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="@drawable/border_citas"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        >
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="9 de noviembre de 2002 a las 15"
-                            android:textColor="@color/border"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="@drawable/border_citas"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        >
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="9 de noviembre de 2002 a las 15"
-                            android:textColor="@color/border"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TextView"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
+                    </androidx.recyclerview.widget.RecyclerView>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
