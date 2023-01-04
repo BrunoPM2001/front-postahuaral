@@ -314,7 +314,6 @@ public class PagoHistorial extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject object = new JSONObject(response);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(PagoHistorial.this, "No se pudo enviar el mail de confirmación.", Toast.LENGTH_SHORT).show();

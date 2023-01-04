@@ -36,7 +36,7 @@ public class MenuActivity extends AppCompatActivity {
 
         //  Recuperando token del login
         token = getIntent().getExtras().getString("Token");
-        correo1 = getIntent().getExtras().getString("Correo");
+        correo1 = getIntent().getExtras().getString("correo");
 
         //  Recuperando botones
         programarCita = findViewById(R.id.programarcita);
@@ -104,6 +104,7 @@ public class MenuActivity extends AppCompatActivity {
     public void programarCita() {
         Intent newWindow = new Intent(getApplicationContext(), ProgramarCitaActivity.class);
         newWindow.putExtra("Token", token);
+        newWindow.putExtra("correo", correo1);
         startActivity(newWindow);
     }
 }

@@ -46,22 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        /*
-        autoCompleteTextView = findViewById(R.id.auto_complete_esp);
-        adapterString = new ArrayAdapter<String>(this, R.layout.list_items, items);
-
-        autoCompleteTextView.setAdapter(adapterString);
-
-        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(MainActivity.this, "Item: " + item, Toast.LENGTH_SHORT).show();
-            }
-        });
-    */
     }
 
     public void login(String correo, String pass) {
@@ -86,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             if (token != null ) {
                                 Intent newWindow = new Intent(getApplicationContext(), MenuActivity.class);
                                 newWindow.putExtra("Token", token);
-                                newWindow.putExtra("Correo", correo);
+                                newWindow.putExtra("correo", correo);
                                 startActivity(newWindow);
                             } else {
                                 Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
